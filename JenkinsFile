@@ -6,30 +6,27 @@ pipeline {
             steps {
                 echo 'Cloning the GitHub repository...'
                 git branch: 'main',
-                    url: 'https://github.com/your-username/your-repo.git'
+                    url: 'https://github.com/azizjaballah/timesheet-devops.git',
+                    credentialsId: 'github-token' // Use the ID you provided for your GitHub token
             }
         }
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Simulate build command (replace with actual build command like `mvn clean install` if using Maven)
                 sh 'echo "Build completed!"'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Simulate test command (replace with actual test command)
                 sh 'echo "Tests completed!"'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying the project...'
-                // Simulate deploy command (replace with actual deploy command)
                 sh 'echo "Deployment completed!"'
             }
         }
     }
 }
-
